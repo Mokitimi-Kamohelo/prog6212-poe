@@ -72,3 +72,47 @@ CREATE TABLE Users
         REFERENCES Roles(RoleId)
 );
 GO
+
+INSERT INTO Users
+(
+    FirstName,
+    LastName,
+    Email,
+    PasswordHash,
+    RoleId,
+    Phone
+)
+VALUES
+(
+    'Thabo',
+    'Mokoena',
+    'thabo@raceday.co.za',
+    'HASHED_PASSWORD_SAMPLE_001',
+    (SELECT RoleId FROM Roles WHERE RoleName = 'Organiser'),
+    '0821112233'
+),
+(
+    'Lerato',
+    'Dlamini',
+    'lerato@raceday.co.za',
+    'HASHED_PASSWORD_SAMPLE_002',
+    (SELECT RoleId FROM Roles WHERE RoleName = 'Organiser'),
+    '0832223344'
+),
+(
+    'Sipho',
+    'Nkosi',
+    'sipho@example.com',
+    'HASHED_PASSWORD_SAMPLE_003',
+    (SELECT RoleId FROM Roles WHERE RoleName = 'Participant'),
+    '0843334455'
+),
+(
+    'Amahle',
+    'Ndlovu',
+    'amahle@example.com',
+    'HASHED_PASSWORD_SAMPLE_004',
+    (SELECT RoleId FROM Roles WHERE RoleName = 'Participant'),
+    '0854445566'
+);
+GO
