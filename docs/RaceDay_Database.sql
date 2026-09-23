@@ -116,3 +116,34 @@ VALUES
     '0854445566'
 );
 GO
+
+CREATE TABLE Events
+(
+    EventId INT IDENTITY(1,1) NOT NULL,
+    OrganiserId INT NOT NULL,
+    EventTypeId INT NOT NULL,
+    EventName NVARCHAR(150) NOT NULL,
+    Description NVARCHAR(1000) NOT NULL,
+    EventDate DATE NOT NULL,
+    Location NVARCHAR(200) NOT NULL,
+    Distance DECIMAL(6,2) NOT NULL,
+    CreatedAt DATETIME2 NOT NULL
+        CONSTRAINT DF_Events_CreatedAt
+        DEFAULT SYSDATETIME(),
+
+    CONSTRAINT PK_Events
+        PRIMARY KEY (EventId),
+
+    CONSTRAINT FK_Events_Organiser
+        FOREIGN KEY (OrganiserId)
+        REFERENCES Users(UserId),
+
+    CONSTRAINT FK_Events_EventType
+        FOREIGN KEY (EventTypeId)
+        REFERENCES EventTypes(EventTypeId),
+
+    CONSTRAINT CK_Events_Distance
+        CHECK (Distance > 0)
+);
+GO
+
