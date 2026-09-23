@@ -312,3 +312,52 @@ CREATE TABLE Enrolments
 );
 GO
 
+INSERT INTO Enrolments
+(
+    ParticipantId,
+    EventId,
+    CategoryId,
+    Status
+)
+VALUES
+(
+    (SELECT UserId FROM Users WHERE Email = 'sipho@example.com'),
+    (SELECT EventId FROM Events WHERE EventName = 'Johannesburg City Run'),
+    (
+        SELECT CategoryId
+        FROM Categories
+        WHERE EventId =
+            (SELECT EventId FROM Events
+             WHERE EventName = 'Johannesburg City Run')
+        AND CategoryName = '10km'
+    ),
+    'Registered'
+),
+(
+    (SELECT UserId FROM Users WHERE Email = 'amahle@example.com'),
+    (SELECT EventId FROM Events WHERE EventName = 'Johannesburg City Run'),
+    (
+        SELECT CategoryId
+        FROM Categories
+        WHERE EventId =
+            (SELECT EventId FROM Events
+             WHERE EventName = 'Johannesburg City Run')
+        AND CategoryName = 'Senior'
+    ),
+    'Registered'
+),
+(
+    (SELECT UserId FROM Users WHERE Email = 'sipho@example.com'),
+    (SELECT EventId FROM Events WHERE EventName = 'Soweto Community Walk'),
+    (
+        SELECT CategoryId
+        FROM Categories
+        WHERE EventId =
+            (SELECT EventId FROM Events
+             WHERE EventName = 'Soweto Community Walk')
+        AND CategoryName = '5km'
+    ),
+    'Registered'
+);
+GO
+
