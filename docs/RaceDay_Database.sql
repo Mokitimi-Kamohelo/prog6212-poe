@@ -207,3 +207,72 @@ CREATE TABLE Categories
 );
 GO
 
+INSERT INTO Categories
+(
+    EventId,
+    CategoryName,
+    CategoryType,
+    CategoryValue
+)
+VALUES
+-- Johannesburg City Run
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Johannesburg City Run'),
+    'Under 20',
+    'Age',
+    'Under 20'
+),
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Johannesburg City Run'),
+    'Senior',
+    'Age',
+    'Senior'
+),
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Johannesburg City Run'),
+    '10km',
+    'Distance',
+    '10'
+),
+
+-- Soweto Community Walk
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Soweto Community Walk'),
+    'Under 20',
+    'Age',
+    'Under 20'
+),
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Soweto Community Walk'),
+    'Senior',
+    'Age',
+    'Senior'
+),
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Soweto Community Walk'),
+    '5km',
+    'Distance',
+    '5'
+),
+
+-- Midrand Cycle Challenge
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Midrand Cycle Challenge'),
+    'Junior',
+    'Age',
+    'Junior'
+),
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Midrand Cycle Challenge'),
+    'Senior',
+    'Age',
+    'Senior'
+),
+(
+    (SELECT EventId FROM Events WHERE EventName = 'Midrand Cycle Challenge'),
+    '21km',
+    'Distance',
+    '21'
+);
+GO
+
