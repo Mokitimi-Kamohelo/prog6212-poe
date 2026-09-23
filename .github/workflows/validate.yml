@@ -20,7 +20,7 @@ jobs:
       - name: Check required files
         run: |
           test -f docs/RaceDay_ERD.png
-          test -f docs/RaceDay_API_Endpoint_Plan.md
+          test -f docs/API Endpoint Plan Table.pdf
           test -f docs/RaceDay_Database.sql
           test -f README.md
 
