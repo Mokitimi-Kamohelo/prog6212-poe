@@ -28,6 +28,9 @@ VALUES
     ('Participant');
 GO
 
+SELECT *
+FROM Roles;
+
 CREATE TABLE EventTypes
 (
     EventTypeId INT IDENTITY(1,1) NOT NULL,
@@ -47,6 +50,9 @@ VALUES
     ('Walk'),
     ('Cycle');
 GO
+
+SELECT *
+FROM EventTypes;
 
 CREATE TABLE Users
 (
@@ -116,6 +122,9 @@ VALUES
     '0854445566'
 );
 GO
+
+SELECT *
+FROM Users;
 
 CREATE TABLE Events
 (
@@ -187,6 +196,9 @@ VALUES
 );
 GO
 
+SELECT *
+FROM Events;
+
 CREATE TABLE Categories
 (
     CategoryId INT IDENTITY(1,1) NOT NULL,
@@ -215,7 +227,7 @@ INSERT INTO Categories
     CategoryValue
 )
 VALUES
--- Johannesburg City Run
+
 (
     (SELECT EventId FROM Events WHERE EventName = 'Johannesburg City Run'),
     'Under 20',
@@ -235,7 +247,6 @@ VALUES
     '10'
 ),
 
--- Soweto Community Walk
 (
     (SELECT EventId FROM Events WHERE EventName = 'Soweto Community Walk'),
     'Under 20',
@@ -255,7 +266,6 @@ VALUES
     '5'
 ),
 
--- Midrand Cycle Challenge
 (
     (SELECT EventId FROM Events WHERE EventName = 'Midrand Cycle Challenge'),
     'Junior',
@@ -275,6 +285,9 @@ VALUES
     '21'
 );
 GO
+
+SELECT *
+FROM Categories;
 
 CREATE TABLE Enrolments
 (
@@ -361,6 +374,9 @@ VALUES
 );
 GO
 
+SELECT *
+FROM Enrolments;
+
 CREATE TABLE Results
 (
     ResultId INT IDENTITY(1,1) NOT NULL,
@@ -420,3 +436,26 @@ VALUES
 );
 GO
 
+SELECT *
+FROM Results;
+
+SELECT
+    u.FirstName + ' ' + u.LastName AS Participant,
+    e.EventName,
+    c.CategoryName,
+    et.TypeName AS EventType,
+    en.Status,
+    r.FinishTime,
+    r.FinishPosition
+FROM Enrolments en
+INNER JOIN Users u
+    ON en.ParticipantId = u.UserId
+INNER JOIN Events e
+    ON en.EventId = e.EventId
+INNER JOIN Categories c
+    ON en.CategoryId = c.CategoryId
+INNER JOIN EventTypes et
+    ON e.EventTypeId = et.EventTypeId
+LEFT JOIN Results r
+    ON en.EnrolmentId = r.EnrolmentId
+ORDER BY e.EventName, r.FinishPosition;
