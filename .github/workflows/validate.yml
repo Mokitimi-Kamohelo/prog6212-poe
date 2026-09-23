@@ -1,0 +1,36 @@
+name: Validate RaceDay Repository
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-repository:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required directories
+        run: |
+          test -d docs
+          test -d .github/workflows
+
+      - name: Check required files
+        run: |
+          test -f docs/RaceDay_ERD.png
+          test -f docs/RaceDay_API_Endpoint_Plan.md
+          test -f docs/RaceDay_Database.sql
+          test -f README.md
+
+      - name: Validate SQL script is not empty
+        run: |
+          test -s docs/RaceDay_Database.sql
+
+      - name: Validate API plan is not empty
+        run: |
+          test -s docs/RaceDay_API_Endpoint_Plan.md
+
+      - name: Repository validation successful
+        run: echo "RaceDay repository structure is valid."
