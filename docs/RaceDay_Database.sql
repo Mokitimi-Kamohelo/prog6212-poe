@@ -383,3 +383,40 @@ CREATE TABLE Results
 );
 GO
 
+INSERT INTO Results
+(
+    EnrolmentId,
+    FinishTime,
+    FinishPosition
+)
+VALUES
+(
+    (
+        SELECT EnrolmentId
+        FROM Enrolments
+        WHERE ParticipantId =
+            (SELECT UserId FROM Users
+             WHERE Email = 'sipho@example.com')
+        AND EventId =
+            (SELECT EventId FROM Events
+             WHERE EventName = 'Johannesburg City Run')
+    ),
+    '00:52:34',
+    18
+),
+(
+    (
+        SELECT EnrolmentId
+        FROM Enrolments
+        WHERE ParticipantId =
+            (SELECT UserId FROM Users
+             WHERE Email = 'amahle@example.com')
+        AND EventId =
+            (SELECT EventId FROM Events
+             WHERE EventName = 'Johannesburg City Run')
+    ),
+    '00:58:21',
+    27
+);
+GO
+
