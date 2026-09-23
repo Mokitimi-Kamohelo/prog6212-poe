@@ -147,3 +147,43 @@ CREATE TABLE Events
 );
 GO
 
+INSERT INTO Events
+(
+    OrganiserId,
+    EventTypeId,
+    EventName,
+    Description,
+    EventDate,
+    Location,
+    Distance
+)
+VALUES
+(
+    (SELECT UserId FROM Users WHERE Email = 'thabo@raceday.co.za'),
+    (SELECT EventTypeId FROM EventTypes WHERE TypeName = 'Run'),
+    'Johannesburg City Run',
+    'A community road running event through Johannesburg.',
+    '2027-02-14',
+    'Johannesburg, Gauteng',
+    10.00
+),
+(
+    (SELECT UserId FROM Users WHERE Email = 'thabo@raceday.co.za'),
+    (SELECT EventTypeId FROM EventTypes WHERE TypeName = 'Walk'),
+    'Soweto Community Walk',
+    'A community walking event celebrating health and participation.',
+    '2027-03-06',
+    'Soweto, Gauteng',
+    5.00
+),
+(
+    (SELECT UserId FROM Users WHERE Email = 'lerato@raceday.co.za'),
+    (SELECT EventTypeId FROM EventTypes WHERE TypeName = 'Cycle'),
+    'Midrand Cycle Challenge',
+    'A road cycling event for recreational and competitive cyclists.',
+    '2027-04-18',
+    'Midrand, Gauteng',
+    21.00
+);
+GO
+
