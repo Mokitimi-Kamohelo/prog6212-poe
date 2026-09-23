@@ -187,3 +187,23 @@ VALUES
 );
 GO
 
+CREATE TABLE Categories
+(
+    CategoryId INT IDENTITY(1,1) NOT NULL,
+    EventId INT NOT NULL,
+    CategoryName NVARCHAR(100) NOT NULL,
+    CategoryType NVARCHAR(20) NOT NULL,
+    CategoryValue NVARCHAR(50) NULL,
+
+    CONSTRAINT PK_Categories
+        PRIMARY KEY (CategoryId),
+
+    CONSTRAINT FK_Categories_Events
+        FOREIGN KEY (EventId)
+        REFERENCES Events(EventId),
+
+    CONSTRAINT CK_Categories_Type
+        CHECK (CategoryType IN ('Age', 'Distance'))
+);
+GO
+
