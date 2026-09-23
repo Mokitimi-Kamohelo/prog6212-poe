@@ -3,3 +3,5 @@ The RaceDay system is a web-based event management system designed for the South
 An Organiser is responsible for managing RaceDay events. Organisers can create, update, and delete events, define age or distance categories for events, view participant enrolments for their events, and capture participants' finishing times and positions.
 
 A Participant uses RaceDay to browse available events, view event categories, enrol in events by selecting a category, and view their own race results and performance information.
+
+<img width="1901" height="571" alt="image" src="https://github.com/user-attachments/assets/ad30a201-2f29-4e51-8a12-f8c01d6d2eea" />
