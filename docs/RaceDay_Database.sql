@@ -276,3 +276,39 @@ VALUES
 );
 GO
 
+CREATE TABLE Enrolments
+(
+    EnrolmentId INT IDENTITY(1,1) NOT NULL,
+    ParticipantId INT NOT NULL,
+    EventId INT NOT NULL,
+    CategoryId INT NOT NULL,
+    EnrolmentDate DATETIME2 NOT NULL
+        CONSTRAINT DF_Enrolments_EnrolmentDate
+        DEFAULT SYSDATETIME(),
+    Status NVARCHAR(20) NOT NULL
+        CONSTRAINT DF_Enrolments_Status
+        DEFAULT 'Registered',
+
+    CONSTRAINT PK_Enrolments
+        PRIMARY KEY (EnrolmentId),
+
+    CONSTRAINT FK_Enrolments_Participant
+        FOREIGN KEY (ParticipantId)
+        REFERENCES Users(UserId),
+
+    CONSTRAINT FK_Enrolments_Event
+        FOREIGN KEY (EventId)
+        REFERENCES Events(EventId),
+
+    CONSTRAINT FK_Enrolments_Category
+        FOREIGN KEY (CategoryId)
+        REFERENCES Categories(CategoryId),
+
+    CONSTRAINT CK_Enrolments_Status
+        CHECK (Status IN ('Registered', 'Cancelled', 'Completed')),
+
+    CONSTRAINT UQ_Enrolments_Participant_Event
+        UNIQUE (ParticipantId, EventId)
+);
+GO
+
