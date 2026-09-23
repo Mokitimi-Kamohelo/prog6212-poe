@@ -361,3 +361,25 @@ VALUES
 );
 GO
 
+CREATE TABLE Results
+(
+    ResultId INT IDENTITY(1,1) NOT NULL,
+    EnrolmentId INT NOT NULL,
+    FinishTime TIME NOT NULL,
+    FinishPosition INT NOT NULL,
+
+    CONSTRAINT PK_Results
+        PRIMARY KEY (ResultId),
+
+    CONSTRAINT FK_Results_Enrolments
+        FOREIGN KEY (EnrolmentId)
+        REFERENCES Enrolments(EnrolmentId),
+
+    CONSTRAINT UQ_Results_Enrolment
+        UNIQUE (EnrolmentId),
+
+    CONSTRAINT CK_Results_Position
+        CHECK (FinishPosition > 0)
+);
+GO
+
