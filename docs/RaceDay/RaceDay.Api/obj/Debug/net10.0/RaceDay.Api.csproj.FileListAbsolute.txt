@@ -168,3 +168,5 @@ C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Api\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Api\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
