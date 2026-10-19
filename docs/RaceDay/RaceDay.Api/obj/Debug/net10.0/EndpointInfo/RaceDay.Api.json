@@ -67,6 +67,30 @@
         }
       }
     },
+    "/api/AuthTest/protected": {
+      "get": {
+        "tags": [
+          "AuthTest"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/AuthTest/participant": {
+      "get": {
+        "tags": [
+          "AuthTest"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/EventTypes": {
       "get": {
         "tags": [
@@ -213,11 +237,27 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter your JWT access token.",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
     }
   },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ],
   "tags": [
     {
       "name": "Auth"
+    },
+    {
+      "name": "AuthTest"
     },
     {
       "name": "EventTypes"

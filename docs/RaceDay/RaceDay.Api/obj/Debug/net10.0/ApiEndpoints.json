@@ -32,8 +32,28 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "RaceDay.Api.Controllers.AuthTestController",
+    "Method": "ParticipantOnly",
+    "RelativePath": "api/AuthTest/participant",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RaceDay.Api.Controllers.AuthTestController",
+    "Method": "Protected",
+    "RelativePath": "api/AuthTest/protected",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_2",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
     "RelativePath": "api/diagnostics/database",
     "HttpMethod": "GET",
     "IsController": false,
