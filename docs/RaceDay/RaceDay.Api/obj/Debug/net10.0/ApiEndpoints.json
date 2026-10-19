@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "RaceDay.Api.Controllers.EventTypesController",
+    "Method": "GetEventTypes",
+    "RelativePath": "api/EventTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "RaceDay.Api.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
