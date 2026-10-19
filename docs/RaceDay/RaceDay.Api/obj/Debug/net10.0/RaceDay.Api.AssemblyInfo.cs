@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RaceDay.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f93ed77a0aab1441c6b9aafb51a84408015057cf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b8be68227672d02ed499d430ceeb9bfdeeab01f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("RaceDay.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RaceDay.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
