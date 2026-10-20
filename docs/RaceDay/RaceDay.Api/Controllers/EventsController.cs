@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using RaceDay.Api.Models;
 using RaceDay.Api.DTOs;
 
@@ -17,6 +19,8 @@ public class EventsController : ControllerBase
     }
 
     // GET: api/Events
+    // Public: anyone can browse events.
+    [AllowAnonymous]
     [HttpGet]
     public async Task<IActionResult> GetEvents()
     {
@@ -42,6 +46,8 @@ public class EventsController : ControllerBase
     }
 
     // GET: api/Events/5
+    // Public: anyone can view an event and its categories.
+    [AllowAnonymous]
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetEvent(int id)
     {
@@ -71,40 +77,52 @@ public class EventsController : ControllerBase
             .FirstOrDefaultAsync();
 
         if (eventItem == null)
-            return NotFound(new { message = "Event not found." });
+        {
+            return NotFound(new
+            {
+                message = "Event not found."
+            });
+        }
 
         return Ok(eventItem);
     }
 
     // POST: api/Events
-    // Temporary: authentication and organiser ownership checks
-    // will be added when JWT authentication is configured.
+    // Only authenticated Organisers can create events.
+    [Authorize(Roles = "Organiser")]
     [HttpPost]
     public async Task<IActionResult> CreateEvent(
         [FromBody] CreateEventRequest request)
     {
-        if (!await _context.EventTypes
-            .AnyAsync(t => t.EventTypeId == request.EventTypeId))
+        var userIdValue = User.FindFirstValue(
+            ClaimTypes.NameIdentifier);
+
+        if (!int.TryParse(userIdValue, out var organiserId))
+        {
+            return Unauthorized(new
+            {
+                message = "The authenticated user's ID is missing or invalid."
+            });
+        }
+
+        var organiserExists = await _context.Users
+            .AnyAsync(u =>
+                u.UserId == organiserId &&
+                u.Role.RoleName == "Organiser");
+
+        if (!organiserExists)
+        {
+            return Forbid();
+        }
+
+        var eventTypeExists = await _context.EventTypes
+            .AnyAsync(t => t.EventTypeId == request.EventTypeId);
+
+        if (!eventTypeExists)
         {
             return BadRequest(new
             {
                 message = "The selected event type does not exist."
-            });
-        }
-
-        // Temporary development value only.
-        // Replace this with the authenticated organiser's ID
-        // before treating the endpoint as production-ready.
-        var organiserId = await _context.Users
-            .Where(u => u.Role.RoleName == "Organiser")
-            .Select(u => u.UserId)
-            .FirstOrDefaultAsync();
-
-        if (organiserId == 0)
-        {
-            return BadRequest(new
-            {
-                message = "No organiser exists in the database."
             });
         }
 

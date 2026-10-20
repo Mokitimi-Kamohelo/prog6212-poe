@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 using RaceDay.Api.DTOs;
 using RaceDay.Api.Models;
 
@@ -16,7 +18,15 @@ public class CategoriesController : ControllerBase
         _context = context;
     }
 
+    private bool TryGetCurrentUserId(out int userId)
+    {
+        return int.TryParse(
+            User.FindFirstValue(ClaimTypes.NameIdentifier),
+            out userId);
+    }
+
     // GET: api/Categories
+    [AllowAnonymous]
     [HttpGet]
     public async Task<IActionResult> GetCategories()
     {
@@ -37,6 +47,7 @@ public class CategoriesController : ControllerBase
     }
 
     // GET: api/Categories/5
+    [AllowAnonymous]
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetCategory(int id)
     {
@@ -56,16 +67,14 @@ public class CategoriesController : ControllerBase
 
         if (category == null)
         {
-            return NotFound(new
-            {
-                message = "Category not found."
-            });
+            return NotFound(new { message = "Category not found." });
         }
 
         return Ok(category);
     }
 
     // GET: api/Categories/event/5
+    [AllowAnonymous]
     [HttpGet("event/{eventId:int}")]
     public async Task<IActionResult> GetCategoriesByEvent(int eventId)
     {
@@ -74,10 +83,7 @@ public class CategoriesController : ControllerBase
 
         if (!eventExists)
         {
-            return NotFound(new
-            {
-                message = "Event not found."
-            });
+            return NotFound(new { message = "Event not found." });
         }
 
         var categories = await _context.Categories
@@ -97,20 +103,31 @@ public class CategoriesController : ControllerBase
     }
 
     // POST: api/Categories/event/5
+    [Authorize(Roles = "Organiser")]
     [HttpPost("event/{eventId:int}")]
     public async Task<IActionResult> CreateCategory(
         int eventId,
         [FromBody] CreateCategoryRequest request)
     {
+        if (!TryGetCurrentUserId(out var userId))
+        {
+            return Unauthorized(new
+            {
+                message = "The authenticated user's ID is missing or invalid."
+            });
+        }
+
         var eventItem = await _context.Events
             .FirstOrDefaultAsync(e => e.EventId == eventId);
 
         if (eventItem == null)
         {
-            return NotFound(new
-            {
-                message = "Event not found."
-            });
+            return NotFound(new { message = "Event not found." });
+        }
+
+        if (eventItem.OrganiserId != userId)
+        {
+            return Forbid();
         }
 
         var category = new Category
@@ -138,20 +155,32 @@ public class CategoriesController : ControllerBase
     }
 
     // PUT: api/Categories/5
+    [Authorize(Roles = "Organiser")]
     [HttpPut("{id:int}")]
     public async Task<IActionResult> UpdateCategory(
         int id,
         [FromBody] UpdateCategoryRequest request)
     {
+        if (!TryGetCurrentUserId(out var userId))
+        {
+            return Unauthorized(new
+            {
+                message = "The authenticated user's ID is missing or invalid."
+            });
+        }
+
         var category = await _context.Categories
+            .Include(c => c.Event)
             .FirstOrDefaultAsync(c => c.CategoryId == id);
 
         if (category == null)
         {
-            return NotFound(new
-            {
-                message = "Category not found."
-            });
+            return NotFound(new { message = "Category not found." });
+        }
+
+        if (category.Event.OrganiserId != userId)
+        {
+            return Forbid();
         }
 
         category.CategoryName = request.CategoryName;
@@ -164,21 +193,33 @@ public class CategoriesController : ControllerBase
     }
 
     // DELETE: api/Categories/5
+    [Authorize(Roles = "Organiser")]
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteCategory(int id)
     {
+        if (!TryGetCurrentUserId(out var userId))
+        {
+            return Unauthorized(new
+            {
+                message = "The authenticated user's ID is missing or invalid."
+            });
+        }
+
         var category = await _context.Categories
+            .Include(c => c.Event)
             .FirstOrDefaultAsync(c => c.CategoryId == id);
 
         if (category == null)
         {
-            return NotFound(new
-            {
-                message = "Category not found."
-            });
+            return NotFound(new { message = "Category not found." });
         }
 
-        // Do not delete a category that is referenced by enrolments.
+        if (category.Event.OrganiserId != userId)
+        {
+            return Forbid();
+        }
+
+        // Protect categories referenced by enrolments.
         var hasEnrolments = await _context.Enrolments
             .AnyAsync(e => e.CategoryId == id);
 
