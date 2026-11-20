@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|solutionrelative:raceday.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|solutionrelative:raceday.api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.api\\dtos\\createresultrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|solutionrelative:raceday.api\\dtos\\createresultrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|solutionrelative:raceday.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.api\\dtos\\updatecategoryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -97,11 +97,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ResultsController.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Api\\Controllers\\ResultsController.cs",
               "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\ResultsController.cs",
@@ -109,12 +109,11 @@
               "RelativeToolTip": "RaceDay.Api\\Controllers\\ResultsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T04:47:30.146Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T04:47:30.146Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CreateResultRequest.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Api\\DTOs\\CreateResultRequest.cs",
               "RelativeDocumentMoniker": "RaceDay.Api\\DTOs\\CreateResultRequest.cs",
@@ -126,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CreateEnrolmentRequest.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Api\\DTOs\\CreateEnrolmentRequest.cs",
               "RelativeDocumentMoniker": "RaceDay.Api\\DTOs\\CreateEnrolmentRequest.cs",
@@ -138,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Api\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\CategoriesController.cs",
@@ -146,7 +145,8 @@
               "RelativeToolTip": "RaceDay.Api\\Controllers\\CategoriesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T21:51:30.6Z"
+              "WhenOpened": "2026-10-19T21:51:30.6Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -174,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EventsController.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Api\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\EventsController.cs",
@@ -182,12 +182,11 @@
               "RelativeToolTip": "RaceDay.Api\\Controllers\\EventsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T21:45:34.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-19T21:45:34.791Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EnrolmentsController.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Api\\Controllers\\EnrolmentsController.cs",
               "RelativeDocumentMoniker": "RaceDay.Api\\Controllers\\EnrolmentsController.cs",
