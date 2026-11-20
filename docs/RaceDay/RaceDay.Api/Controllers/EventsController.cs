@@ -120,6 +120,51 @@ public class EventsController : ControllerBase
         return Ok(events);
     }
 
+    // PUT: api/Events/5
+    [Authorize(Roles = "Organiser")]
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateEvent(
+        int id,
+        [FromBody] UpdateEventRequest request)
+    {
+        var userIdValue = User.FindFirstValue(
+            ClaimTypes.NameIdentifier);
+
+        if (!int.TryParse(userIdValue, out var organiserId))
+            return Unauthorized();
+
+        var eventItem = await _context.Events
+            .FirstOrDefaultAsync(e =>
+                e.EventId == id &&
+                e.OrganiserId == organiserId);
+
+        if (eventItem == null)
+            return NotFound(new
+            {
+                message = "Event not found or you do not manage this event."
+            });
+
+        var eventTypeExists = await _context.EventTypes
+            .AnyAsync(t => t.EventTypeId == request.EventTypeId);
+
+        if (!eventTypeExists)
+            return BadRequest(new
+            {
+                message = "The selected event type does not exist."
+            });
+
+        eventItem.EventName = request.EventName;
+        eventItem.Description = request.Description;
+        eventItem.EventDate = request.EventDate;
+        eventItem.Location = request.Location;
+        eventItem.Distance = request.Distance;
+        eventItem.EventTypeId = request.EventTypeId;
+
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
+
     // POST: api/Events
     // Only authenticated Organisers can create events.
     [Authorize(Roles = "Organiser")]
@@ -183,5 +228,42 @@ public class EventsController : ControllerBase
                 newEvent.EventDate,
                 newEvent.Location
             });
+    }
+
+    // DELETE: api/Events/5
+    [Authorize(Roles = "Organiser")]
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteEvent(int id)
+    {
+        var userIdValue = User.FindFirstValue(
+            ClaimTypes.NameIdentifier);
+
+        if (!int.TryParse(userIdValue, out var organiserId))
+            return Unauthorized();
+
+        var eventItem = await _context.Events
+            .FirstOrDefaultAsync(e =>
+                e.EventId == id &&
+                e.OrganiserId == organiserId);
+
+        if (eventItem == null)
+            return NotFound(new
+            {
+                message = "Event not found or you do not manage this event."
+            });
+
+        var hasEnrolments = await _context.Enrolments
+            .AnyAsync(e => e.EventId == id);
+
+        if (hasEnrolments)
+            return Conflict(new
+            {
+                message = "Events with enrolments cannot be deleted."
+            });
+
+        _context.Events.Remove(eventItem);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
     }
 }
