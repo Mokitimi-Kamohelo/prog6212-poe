@@ -1,52 +1,159 @@
 ﻿@model RaceDay.Mvc.Models.ViewModels.ApiStatusViewModel
 
+@using RaceDay.Mvc.Services
+
 @{
-    ViewData["Title"] = "RaceDay";
+    ViewData["Title"] = "Home";
+
+    var loggedIn = Context.Session.GetString(
+        SessionKeys.JwtToken) != null;
+
+    var role = Context.Session.GetString(
+        SessionKeys.Role);
 }
 
-<div class="container mt-5">
+<div class="p-4 p-md-5 mb-4 bg-dark text-white rounded-3">
 
-    <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold">RaceDay</h1>
+    <div class="container-fluid py-3">
+
+        <h1 class="display-4 fw-bold">
+
+            RaceDay
+
+        </h1>
 
         <p class="lead">
-            Your running, walking and cycling events platform.
+
+            Every race starts with a single step.
+
+            Discover events, challenge yourself,
+            and track your achievements.
+
         </p>
-    </div>
 
-    <div class="card shadow-sm mx-auto" style="max-width: 700px;">
+        @if (!loggedIn)
+        {
+            <a asp-controller="Auth"
+               asp-action="Register"
+               class="btn btn-warning btn-lg me-2">
 
-        <div class="card-header">
-            <h4 class="mb-0">System Connectivity</h4>
-        </div>
+                Get Started
 
-        <div class="card-body">
+            </a>
 
-            @if (Model.ApiConnected)
-            {
-                <div class="alert alert-success">
-                    <strong>Connected</strong>
-                    <p class="mb-0">@Model.Message</p>
-                </div>
-            }
-            else
-            {
-                <div class="alert alert-danger">
-                    <strong>Connection Failed</strong>
-                    <p class="mb-0">@Model.Message</p>
-                </div>
-            }
+            <a asp-controller="Auth"
+               asp-action="Login"
+               class="btn btn-outline-light btn-lg">
 
-            <h5>API Response</h5>
+                Login
 
-            <pre class="bg-light p-3 rounded text-break">@Model.ApiResponse</pre>
+            </a>
+        }
+        else
+        {
+            <h4 class="mt-3">
 
-            <button class="btn btn-primary"
-                    onclick="location.reload()">
-                Test Connection Again
-            </button>
+                Welcome,
+                @Context.Session.GetString(SessionKeys.FirstName)!
 
-        </div>
+            </h4>
+
+            <p>
+
+                You are logged in as
+                <strong>@role</strong>.
+
+            </p>
+        }
+
     </div>
 
 </div>
+
+<div class="row g-4">
+
+    <div class="col-md-6">
+
+        <div class="card h-100 shadow-sm">
+
+            <div class="card-body">
+
+                <h4 class="card-title">
+
+                    Discover Events
+
+                </h4>
+
+                <p class="card-text">
+
+                    Find upcoming running, walking and
+                    cycling events.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="card h-100 shadow-sm">
+
+            <div class="card-body">
+
+                <h4 class="card-title">
+
+                    Track Your Progress
+
+                </h4>
+
+                <p class="card-text">
+
+                    Keep track of your enrolments,
+                    achievements and results.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="my-4" />
+
+<h4>System Status</h4>
+
+@if (Model.ApiConnected)
+{
+    <div class="alert alert-success">
+
+        <strong>API Online</strong>
+
+        <p class="mb-0">
+
+            The RaceDay MVC application is communicating
+            with the backend API.
+
+        </p>
+
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+
+        <strong>API Connection Issue</strong>
+
+        <p class="mb-0">
+
+            @Model.Message
+
+        </p>
+
+    </div>
+}

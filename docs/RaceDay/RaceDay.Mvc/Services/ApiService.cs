@@ -101,4 +101,13 @@ public class ApiService
 
         response.EnsureSuccessStatusCode();
     }
+
+    public async Task<HttpResponseMessage> PostResponseAsync<TRequest>(
+    string endpoint,
+    TRequest data)
+    {
+        var client = CreateClient();
+
+        return await client.PostAsJsonAsync(endpoint, data);
+    }
 }
