@@ -3,88 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\organiser\\manageevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\organiser\\manageevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\organiser\\editcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\organiser\\editcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\controllers\\organisercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\controllers\\organisercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\viewmodels\\editcategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\viewmodels\\editcategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\organiser\\editresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\organiser\\editresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\organiser\\recordresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\organiser\\recordresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\organiser\\createcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\organiser\\createcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\organiser\\createevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\organiser\\createevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\organiser\\myevents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\organiser\\myevents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\views\\organiser\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\views\\organiser\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\viewmodels\\manageeventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\viewmodels\\manageeventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\viewmodels\\createresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\viewmodels\\createresultviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\viewmodels\\createcategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\viewmodels\\createcategoryviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\viewmodels\\createeventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\viewmodels\\createeventviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\viewmodels\\organiserdashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\viewmodels\\organiserdashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\api\\organiserresultapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\api\\organiserresultapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\api\\organiserparticipantapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\api\\organiserparticipantapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\api\\organisereventdetailsapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\api\\organisereventdetailsapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\models\\api\\organisereventapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\models\\api\\organisereventapimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.mvc\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0231E3BC-6742-420E-8E59-C4D3E2F5B290}|RaceDay.Mvc\\RaceDay.Mvc.csproj|solutionrelative:raceday.mvc\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|c:\\users\\shots\\desktop\\clutter\\msa\\prog6212poe\\prog6212-poe\\docs\\raceday\\raceday.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48D9D8E2-607E-794F-661B-67674A1416B8}|RaceDay.Api\\RaceDay.Api.csproj|solutionrelative:raceday.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -99,272 +35,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "RaceDay.Mvc\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAAALQAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:09:38.175Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditCategory.cshtml",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\EditCategory.cshtml",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Organiser\\EditCategory.cshtml",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\EditCategory.cshtml",
-              "RelativeToolTip": "RaceDay.Mvc\\Views\\Organiser\\EditCategory.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAQwCUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:06:41.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EditCategoryViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\EditCategoryViewModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\ViewModels\\EditCategoryViewModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\EditCategoryViewModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\ViewModels\\EditCategoryViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T21:05:36.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EditResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\EditResult.cshtml",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Organiser\\EditResult.cshtml",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\EditResult.cshtml",
-              "RelativeToolTip": "RaceDay.Mvc\\Views\\Organiser\\EditResult.cshtml",
-              "ViewState": "AgIAACYAAAAAAAAAAAAQwE0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:04:59.977Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RecordResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\RecordResult.cshtml",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Organiser\\RecordResult.cshtml",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\RecordResult.cshtml",
-              "RelativeToolTip": "RaceDay.Mvc\\Views\\Organiser\\RecordResult.cshtml",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwEkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:04:46.037Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CreateCategory.cshtml",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\CreateCategory.cshtml",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Organiser\\CreateCategory.cshtml",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\CreateCategory.cshtml",
-              "RelativeToolTip": "RaceDay.Mvc\\Views\\Organiser\\CreateCategory.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAQwEgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:03:51.959Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ManageEvent.cshtml",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\ManageEvent.cshtml",
               "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Organiser\\ManageEvent.cshtml",
               "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\ManageEvent.cshtml",
               "RelativeToolTip": "RaceDay.Mvc\\Views\\Organiser\\ManageEvent.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAE0AAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFAAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:03:36.615Z",
+              "WhenOpened": "2026-11-20T21:37:28.24Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CreateEvent.cshtml",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\CreateEvent.cshtml",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Organiser\\CreateEvent.cshtml",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\CreateEvent.cshtml",
-              "RelativeToolTip": "RaceDay.Mvc\\Views\\Organiser\\CreateEvent.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:03:19.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MyEvents.cshtml",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\MyEvents.cshtml",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Organiser\\MyEvents.cshtml",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\MyEvents.cshtml",
-              "RelativeToolTip": "RaceDay.Mvc\\Views\\Organiser\\MyEvents.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:03:01.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "OrganiserController.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Controllers\\OrganiserController.cs",
               "RelativeDocumentMoniker": "RaceDay.Mvc\\Controllers\\OrganiserController.cs",
               "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Controllers\\OrganiserController.cs",
               "RelativeToolTip": "RaceDay.Mvc\\Controllers\\OrganiserController.cs",
-              "ViewState": "AgIAAIMBAAAAAAAAAAAgwIgBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAIMBAAAAAAAAAAAQwKoBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T21:01:41.72Z",
+              "WhenOpened": "2026-11-20T21:35:05.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Views\\Organiser\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Views\\Organiser\\Dashboard.cshtml",
-              "RelativeToolTip": "RaceDay.Mvc\\Views\\Organiser\\Dashboard.cshtml",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAQwG4AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-11-20T21:02:44.108Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ManageEventViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\ManageEventViewModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\ViewModels\\ManageEventViewModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\ManageEventViewModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\ViewModels\\ManageEventViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T21:01:29.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CreateResultViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\CreateResultViewModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\ViewModels\\CreateResultViewModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\CreateResultViewModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\ViewModels\\CreateResultViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T21:01:16.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CreateCategoryViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\CreateCategoryViewModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\ViewModels\\CreateCategoryViewModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\CreateCategoryViewModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\ViewModels\\CreateCategoryViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T21:01:06.174Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CreateEventViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\CreateEventViewModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\ViewModels\\CreateEventViewModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\CreateEventViewModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\ViewModels\\CreateEventViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T21:00:55.001Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "OrganiserDashboardViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\OrganiserDashboardViewModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\ViewModels\\OrganiserDashboardViewModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\ViewModels\\OrganiserDashboardViewModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\ViewModels\\OrganiserDashboardViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T21:00:42.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "OrganiserResultApiModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\Api\\OrganiserResultApiModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\Api\\OrganiserResultApiModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\Api\\OrganiserResultApiModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\Api\\OrganiserResultApiModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T21:00:07.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "OrganiserParticipantApiModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\Api\\OrganiserParticipantApiModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\Api\\OrganiserParticipantApiModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\Api\\OrganiserParticipantApiModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\Api\\OrganiserParticipantApiModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T20:59:58.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 2,
               "Title": "OrganiserEventDetailsApiModel.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\Api\\OrganiserEventDetailsApiModel.cs",
               "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\Api\\OrganiserEventDetailsApiModel.cs",
               "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\Api\\OrganiserEventDetailsApiModel.cs",
               "RelativeToolTip": "RaceDay.Mvc\\Models\\Api\\OrganiserEventDetailsApiModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T20:59:49.056Z",
+              "WhenOpened": "2026-11-20T21:31:55.66Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "OrganiserEventApiModel.cs",
-              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\Api\\OrganiserEventApiModel.cs",
-              "RelativeDocumentMoniker": "RaceDay.Mvc\\Models\\Api\\OrganiserEventApiModel.cs",
-              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Models\\Api\\OrganiserEventApiModel.cs",
-              "RelativeToolTip": "RaceDay.Mvc\\Models\\Api\\OrganiserEventApiModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Api\\Program.cs",
+              "RelativeDocumentMoniker": "RaceDay.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Api\\Program.cs",
+              "RelativeToolTip": "RaceDay.Api\\Program.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAQwFQAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-20T20:59:25.395Z",
+              "WhenOpened": "2026-11-20T21:24:47.205Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 3,
               "Title": "ApiService.cs",
               "DocumentMoniker": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Services\\ApiService.cs",
               "RelativeDocumentMoniker": "RaceDay.Mvc\\Services\\ApiService.cs",
               "ToolTip": "C:\\Users\\shots\\Desktop\\CLUTTER\\MSA\\PROG6212POE\\prog6212-poe\\docs\\RaceDay\\RaceDay.Mvc\\Services\\ApiService.cs",
               "RelativeToolTip": "RaceDay.Mvc\\Services\\ApiService.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAqwJAAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAQwKkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-20T20:57:57.002Z",
               "EditorCaption": ""

@@ -394,6 +394,38 @@ public class OrganiserController : Controller
             new { id = vm.EventId });
     }
 
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> UploadBanner(
+    int id,
+    IFormFile banner)
+    {
+        if (banner == null || banner.Length == 0)
+        {
+            TempData["Error"] = "Please select an image.";
+            return RedirectToAction("ManageEvent", new { id });
+        }
+
+        var response = await _apiService.PutFileResponseAsync(
+            $"api/Events/{id}/banner",
+            banner);
+
+        if (response.IsSuccessStatusCode)
+        {
+            TempData["Success"] =
+                "Event banner uploaded successfully.";
+        }
+        else
+        {
+            var error = await response.Content.ReadAsStringAsync();
+
+            TempData["Error"] =
+                $"Banner upload failed: {error}";
+        }
+
+        return RedirectToAction("ManageEvent", new { id });
+    }
+
     // LOAD EVENT TYPES
     private async Task LoadEventTypes(CreateEventViewModel vm)
     {

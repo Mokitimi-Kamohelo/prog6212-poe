@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using RaceDay.Api.Models;
+using Azure.Storage.Blobs;
+using RaceDay.Api.Configuration;
+using RaceDay.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,6 +69,20 @@ builder.Services
             ClockSkew = TimeSpan.FromSeconds(30)
         };
     });
+
+builder.Services.Configure<AzureStorageSettings>(
+    builder.Configuration.GetSection("AzureStorage"));
+
+var storageSettings =
+    builder.Configuration.GetSection("AzureStorage")
+        .Get<AzureStorageSettings>()
+    ?? throw new InvalidOperationException(
+        "AzureStorage configuration is missing.");
+
+builder.Services.AddSingleton(
+    new BlobServiceClient(storageSettings.ConnectionString));
+
+builder.Services.AddScoped<IBlobStorageService, BlobStorageService>();
 
 var app = builder.Build();
 

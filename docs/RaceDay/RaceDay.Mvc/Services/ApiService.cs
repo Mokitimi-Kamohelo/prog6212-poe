@@ -1,5 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using Microsoft.AspNetCore.Http;
+
 
 namespace RaceDay.Mvc.Services;
 
@@ -142,5 +144,28 @@ public class ApiService
         var client = CreateClient();
 
         return await client.DeleteAsync(endpoint);
+    }
+
+    public async Task<HttpResponseMessage> PutFileResponseAsync(
+    string endpoint,
+    IFormFile file)
+    {
+        var client = CreateClient();
+
+        using var content = new MultipartFormDataContent();
+
+        using var stream = file.OpenReadStream();
+
+        var fileContent = new StreamContent(stream);
+
+        fileContent.Headers.ContentType =
+            new MediaTypeHeaderValue(file.ContentType);
+
+        content.Add(
+            fileContent,
+            "file",
+            Path.GetFileName(file.FileName));
+
+        return await client.PutAsync(endpoint, content);
     }
 }
