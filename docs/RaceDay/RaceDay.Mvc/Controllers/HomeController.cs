@@ -1,25 +1,43 @@
 using Microsoft.AspNetCore.Mvc;
-using RaceDay.Mvc.Models;
-using System.Diagnostics;
+using RaceDay.Mvc.Models.ViewModels;
+using RaceDay.Mvc.Services;
 
-namespace RaceDay.Mvc.Controllers
+namespace RaceDay.Mvc.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ApiService _apiService;
+
+    public HomeController(ApiService apiService)
     {
-        public IActionResult Index()
+        _apiService = apiService;
+    }
+
+    public async Task<IActionResult> Index()
+    {
+        var model = new ApiStatusViewModel();
+
+        try
         {
-            return View();
+            var response = await _apiService.GetAsync<object>(
+                "api/EventTypes");
+
+            model.ApiConnected = true;
+            model.Message = "RaceDay API is connected successfully!";
+            model.ApiResponse = response?.ToString();
+        }
+        catch (Exception ex)
+        {
+            model.ApiConnected = false;
+            model.Message = "Unable to connect to the RaceDay API.";
+            model.ApiResponse = ex.Message;
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        return View(model);
+    }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    public IActionResult Privacy()
+    {
+        return View();
     }
 }
