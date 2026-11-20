@@ -1,0 +1,327 @@
+﻿@model RaceDay.Mvc.Models.ViewModels.EventDetailsViewModel
+
+@{
+    ViewData["Title"] = Model.Event.EventName;
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        @Model.ErrorMessage
+    </div>
+}
+
+<div class="mb-3">
+
+    <a asp-controller="Events"
+       asp-action="Index"
+       class="btn btn-outline-secondary">
+
+        &larr; Back to Events
+
+    </a>
+
+</div>
+
+<div class="card shadow-sm mb-4">
+
+    <div class="card-body p-4 p-md-5">
+
+        <span class="badge bg-warning text-dark mb-3">
+
+            @(Model.Event.EventType ?? "Event")
+
+        </span>
+
+        <h1 class="display-5 fw-bold">
+
+            @Model.Event.EventName
+
+        </h1>
+
+        <p class="lead text-muted">
+
+            @Model.Event.Location
+
+        </p>
+
+        <hr />
+
+        <div class="row g-3">
+
+            <div class="col-md-4">
+
+                <div class="event-info-box">
+
+                    <small class="text-muted">
+                        Event Date
+                    </small>
+
+                    <h5 class="mt-1">
+
+                        @Model.Event.EventDate.ToString("dddd, dd MMMM yyyy")
+
+                    </h5>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="event-info-box">
+
+                    <small class="text-muted">
+                        Distance
+                    </small>
+
+                    <h5 class="mt-1">
+
+                        @Model.Event.Distance km
+
+                    </h5>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="event-info-box">
+
+                    <small class="text-muted">
+                        Organiser
+                    </small>
+
+                    <h5 class="mt-1">
+
+                        @(Model.Event.Organiser ?? "RaceDay Organiser")
+
+                    </h5>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr />
+
+        <h4>About this event</h4>
+
+        <p>
+
+            @(Model.Event.Description ?? "No event description has been provided.")
+
+        </p>
+
+    </div>
+
+</div>
+
+<div class="row g-4">
+
+    <div class="col-lg-7">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body p-4">
+
+                <h3 class="fw-bold mb-3">
+                    Available Categories
+                </h3>
+
+                @if (Model.Event.Categories == null ||
+                     Model.Event.Categories.Count == 0)
+                {
+                    <div class="alert alert-info">
+
+                        No categories have been added to this event yet.
+
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+
+                        <table class="table table-striped">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Type</th>
+                                    <th>Value</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                @foreach (var category in Model.Event.Categories)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            @category.CategoryName
+                                        </td>
+
+                                        <td>
+                                            @category.CategoryType
+                                        </td>
+
+                                        <td>
+                                            @category.CategoryValue
+                                        </td>
+
+                                    </tr>
+                                }
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-5">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body p-4">
+
+                <h3 class="fw-bold mb-3">
+                    Enrol in this Event
+                </h3>
+
+                @if (Model.AlreadyEnrolled)
+                {
+                    <div class="alert alert-success">
+
+                        You are already enrolled in this event.
+
+                    </div>
+
+                    <a asp-controller="Participant"
+                       asp-action="MyEnrolments"
+                       class="btn btn-dark w-100">
+
+                        View My Enrolments
+
+                    </a>
+                }
+                else if (!Model.IsLoggedIn)
+                {
+                    <p>
+
+                        Log in to your Participant account
+                        to enrol in this event.
+
+                    </p>
+
+                    <a asp-controller="Auth"
+                       asp-action="Login"
+                       asp-route-returnUrl="@Url.Action("Details", "Events", new { id = Model.Event.EventId })"
+                       class="btn btn-dark w-100">
+
+                        Login to Enrol
+
+                    </a>
+
+                    <a asp-controller="Auth"
+                       asp-action="Register"
+                       class="btn btn-outline-dark w-100 mt-2">
+
+                        Create Participant Account
+
+                    </a>
+                }
+                else if (!Model.IsParticipant)
+                {
+                    <div class="alert alert-info">
+
+                        Only Participant accounts can enrol in events.
+
+                    </div>
+                }
+                else if (Model.Event.Categories == null ||
+                         Model.Event.Categories.Count == 0)
+                {
+                    <div class="alert alert-warning">
+
+                        This event currently has no categories available.
+
+                    </div>
+                }
+                else
+                {
+                    <form asp-controller="Events"
+                          asp-action="Enrol"
+                          method="post">
+
+                        <input type="hidden"
+                               name="eventId"
+                               value="@Model.Event.EventId" />
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+
+                                Select Category
+
+                            </label>
+
+                            <select name="categoryId"
+                                    class="form-select"
+                                    required>
+
+                                <option value="">
+                                    Choose a category
+                                </option>
+
+                                @foreach (var category in Model.Event.Categories)
+                                {
+                                    <option value="@category.CategoryId">
+
+                                        @category.CategoryName
+
+                                        (@category.CategoryType:
+                                        @category.CategoryValue)
+
+                                    </option>
+                                }
+
+                            </select>
+
+                        </div>
+
+                        <div class="alert alert-info small">
+
+                            Please confirm that you have selected
+                            the correct category before enrolling.
+
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-warning w-100 fw-bold">
+
+                            Enrol Now
+
+                        </button>
+
+                    </form>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -110,4 +110,29 @@ public class ApiService
 
         return await client.PostAsJsonAsync(endpoint, data);
     }
+
+    public async Task<HttpResponseMessage> GetResponseAsync(
+    string endpoint)
+    {
+        var client = CreateClient();
+
+        return await client.GetAsync(endpoint);
+    }
+
+    public async Task<HttpResponseMessage> PutResponseAsync<TRequest>(
+    string endpoint,
+    TRequest data)
+    {
+        var client = CreateClient();
+
+        return await client.PutAsJsonAsync(endpoint, data);
+    }
+
+    public async Task<HttpResponseMessage> PutResponseAsync(
+    string endpoint)
+    {
+        var client = CreateClient();
+
+        return await client.PutAsync(endpoint, null);
+    }
 }

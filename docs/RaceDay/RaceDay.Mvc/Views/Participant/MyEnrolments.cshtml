@@ -1,0 +1,209 @@
+﻿@model RaceDay.Mvc.Models.ViewModels.MyEnrolmentsViewModel
+
+@{
+    ViewData["Title"] = "My Enrolments";
+}
+
+<div class="mb-4">
+
+    <h1 class="fw-bold">
+        My Enrolments
+    </h1>
+
+    <p class="text-muted">
+
+        Manage the events you have registered for.
+
+    </p>
+
+</div>
+
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        @Model.ErrorMessage
+    </div>
+}
+
+@if (Model.Enrolments.Count == 0)
+{
+    <div class="card shadow-sm">
+
+        <div class="card-body text-center py-5">
+
+            <h4>You haven't enrolled in any events yet.</h4>
+
+            <p class="text-muted">
+
+                Explore upcoming events and find your next challenge.
+
+            </p>
+
+            <a asp-controller="Events"
+               asp-action="Index"
+               class="btn btn-warning">
+
+                Browse Events
+
+            </a>
+
+        </div>
+
+    </div>
+}
+else
+{
+    <div class="row g-4">
+
+        @foreach (var enrolment in Model.Enrolments)
+        {
+            <div class="col-12">
+
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+
+                        <div class="row align-items-center g-3">
+
+                            <div class="col-md-5">
+
+                                <h4 class="fw-bold">
+
+                                    @enrolment.EventName
+
+                                </h4>
+
+                                <p class="text-muted mb-1">
+
+                                    Category:
+                                    @(enrolment.CategoryName ?? "Not specified")
+
+                                </p>
+
+                                <p class="text-muted mb-0">
+
+                                    Enrolled:
+                                    @enrolment.EnrolmentDate.ToString("dd MMM yyyy")
+
+                                </p>
+
+                            </div>
+
+                            <div class="col-md-3">
+
+                                <span class="badge status-badge
+                                    @(enrolment.Status?.ToLower() switch
+                                      {
+                                          "registered" => "bg-success",
+                                          "confirmed" => "bg-success",
+                                          "pending" => "bg-warning text-dark",
+                                          "cancelled" => "bg-secondary",
+                                          _ => "bg-info text-dark"
+                                      })">
+
+                                    @(enrolment.Status ?? "Unknown")
+
+                                </span>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="d-flex flex-wrap gap-2">
+
+                                    <a asp-controller="Events"
+                                       asp-action="Details"
+                                       asp-route-id="@enrolment.EventId"
+                                       class="btn btn-outline-dark">
+
+                                        View Event
+
+                                    </a>
+
+                                    @if (string.Equals(
+                                        enrolment.Status,
+                                        "Registered",
+                                        StringComparison.OrdinalIgnoreCase)
+                                        ||
+                                        string.Equals(
+                                        enrolment.Status,
+                                        "Confirmed",
+                                        StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        <form asp-controller="Participant"
+                                              asp-action="Cancel"
+                                              method="post">
+
+                                            <input type="hidden"
+                                                   name="id"
+                                                   value="@enrolment.EnrolmentId" />
+
+                                            <button type="submit"
+                                                    class="btn btn-outline-danger"
+                                                    onclick="return confirm('Are you sure you want to cancel this enrolment?')">
+
+                                                Cancel
+
+                                            </button>
+
+                                        </form>
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        @if (enrolment.Result != null)
+                        {
+                            <hr />
+
+                            <div class="alert alert-info mb-0">
+
+                                <strong>Result recorded:</strong>
+
+                                @if (enrolment.Result.FinishPosition.HasValue)
+                                {
+                                    <span>
+
+                                        Position:
+                                        @enrolment.Result.FinishPosition
+
+                                    </span>
+                                }
+
+                                @if (enrolment.Result.FinishTime.HasValue)
+                                {
+                                    <span class="ms-2">
+
+                                        Finish Time:
+                                        @enrolment.Result.FinishTime
+
+                                    </span>
+                                }
+
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+}
+
+<div class="mt-4">
+
+    <a asp-controller="Events"
+       asp-action="Index"
+       class="btn btn-warning">
+
+        Browse More Events
+
+    </a>
+
+</div>

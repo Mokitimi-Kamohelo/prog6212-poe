@@ -31,12 +31,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/shots/Desktop/CLUTTER/MSA/PROG6212POE/prog6212-poe/docs/RaceDay/RaceDay.Mvc/Views/Events/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shots/Desktop/CLUTTER/MSA/PROG6212POE/prog6212-poe/docs/RaceDay/RaceDay.Mvc/Views/Events/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXZlbnRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/shots/Desktop/CLUTTER/MSA/PROG6212POE/prog6212-poe/docs/RaceDay/RaceDay.Mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shots/Desktop/CLUTTER/MSA/PROG6212POE/prog6212-poe/docs/RaceDay/RaceDay.Mvc/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shots/Desktop/CLUTTER/MSA/PROG6212POE/prog6212-poe/docs/RaceDay/RaceDay.Mvc/Views/Participant/MyEnrolments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGljaXBhbnRcTXlFbnJvbG1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shots/Desktop/CLUTTER/MSA/PROG6212POE/prog6212-poe/docs/RaceDay/RaceDay.Mvc/Views/Participant/MyResults.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGljaXBhbnRcTXlSZXN1bHRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shots/Desktop/CLUTTER/MSA/PROG6212POE/prog6212-poe/docs/RaceDay/RaceDay.Mvc/Views/Shared/Error.cshtml]

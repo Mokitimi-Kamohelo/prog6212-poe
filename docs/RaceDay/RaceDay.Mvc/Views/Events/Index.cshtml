@@ -1,0 +1,225 @@
+﻿@model RaceDay.Mvc.Models.ViewModels.EventListViewModel
+
+@{
+    ViewData["Title"] = "Upcoming Events";
+}
+
+<div class="d-flex justify-content-between align-items-center flex-wrap mb-4">
+
+    <div>
+        <h1 class="fw-bold">Upcoming Events</h1>
+
+        <p class="text-muted">
+            Discover your next challenge.
+        </p>
+    </div>
+
+</div>
+
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">
+        @Model.ErrorMessage
+    </div>
+}
+
+<div class="card shadow-sm mb-4">
+
+    <div class="card-body">
+
+        <form asp-controller="Events"
+              asp-action="Index"
+              method="get">
+
+            <div class="row g-3">
+
+                <div class="col-md-5">
+
+                    <label class="form-label">
+                        Search events
+                    </label>
+
+                    <input type="text"
+                           name="search"
+                           value="@Model.SearchTerm"
+                           class="form-control"
+                           placeholder="Event name or location..." />
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <label class="form-label">
+                        Event Type
+                    </label>
+
+                    <select name="eventTypeId"
+                            class="form-select">
+
+                        <option value="">
+                            All Types
+                        </option>
+
+                        @foreach (var type in Model.EventTypes)
+                        {
+                            <option value="@type.EventTypeId"
+                                    selected="@(Model.SelectedEventTypeId == type.EventTypeId ? "selected" : null)">
+                                @type.TypeName
+                            </option>
+                        }
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <label class="form-label">
+                        Date
+                    </label>
+
+                    <input type="date"
+                           name="date"
+                           value="@Model.SelectedDate?.ToString("yyyy-MM-dd")"
+                           class="form-control" />
+
+                </div>
+
+                <div class="col-md-2 d-flex align-items-end">
+
+                    <button type="submit"
+                            class="btn btn-dark w-100">
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="mt-3">
+
+                <a asp-controller="Events"
+                   asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    Clear Filters
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@if (Model.Events.Count == 0)
+{
+    <div class="alert alert-info">
+
+        No upcoming events were found matching your search.
+
+    </div>
+}
+else
+{
+    <div class="row g-4">
+
+        @foreach (var raceEvent in Model.Events)
+        {
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100 shadow-sm event-card">
+
+                    <div class="event-card-header">
+
+                        <span class="badge bg-warning text-dark">
+
+                            @(raceEvent.EventType ?? "Event")
+
+                        </span>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <h4 class="card-title fw-bold">
+
+                            @raceEvent.EventName
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            @raceEvent.Location
+
+                        </p>
+
+                        <hr />
+
+                        <div class="mb-2">
+
+                            <strong>Date:</strong>
+
+                            @raceEvent.EventDate.ToString("dd MMM yyyy")
+
+                        </div>
+
+                        <div class="mb-2">
+
+                            <strong>Distance:</strong>
+
+                            @raceEvent.Distance km
+
+                        </div>
+
+                        <div class="mb-2">
+
+                            <strong>Categories:</strong>
+
+                            @raceEvent.CategoryCount
+
+                        </div>
+
+                        @if (!string.IsNullOrWhiteSpace(raceEvent.Description))
+                        {
+                            <p class="mt-3 text-muted">
+
+                                @(raceEvent.Description.Length > 120
+                                    ? raceEvent.Description.Substring(0, 120) + "..."
+                                    : raceEvent.Description)
+
+                            </p>
+                        }
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0 p-3">
+
+                        <a asp-controller="Events"
+                           asp-action="Details"
+                           asp-route-id="@raceEvent.EventId"
+                           class="btn btn-dark w-100">
+
+                            View Event
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+}
+
+<div class="mt-4 text-muted">
+
+    Showing @Model.Events.Count upcoming event(s).
+
+</div>

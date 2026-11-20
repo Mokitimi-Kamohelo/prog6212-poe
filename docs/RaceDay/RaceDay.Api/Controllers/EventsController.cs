@@ -87,6 +87,39 @@ public class EventsController : ControllerBase
         return Ok(eventItem);
     }
 
+    // GET: api/Events/my
+    [Authorize(Roles = "Organiser")]
+    [HttpGet("my")]
+    public async Task<IActionResult> GetMyEvents()
+    {
+        var userIdValue = User.FindFirstValue(
+            ClaimTypes.NameIdentifier);
+
+        if (!int.TryParse(userIdValue, out var organiserId))
+            return Unauthorized();
+
+        var events = await _context.Events
+            .AsNoTracking()
+            .Where(e => e.OrganiserId == organiserId)
+            .Select(e => new
+            {
+                e.EventId,
+                e.EventName,
+                e.Description,
+                e.EventDate,
+                e.Location,
+                e.Distance,
+                e.EventTypeId,
+                EventType = e.EventType.TypeName,
+                CategoryCount = e.Categories.Count,
+                EnrolmentCount = e.Enrolments.Count
+            })
+            .OrderByDescending(e => e.EventDate)
+            .ToListAsync();
+
+        return Ok(events);
+    }
+
     // POST: api/Events
     // Only authenticated Organisers can create events.
     [Authorize(Roles = "Organiser")]

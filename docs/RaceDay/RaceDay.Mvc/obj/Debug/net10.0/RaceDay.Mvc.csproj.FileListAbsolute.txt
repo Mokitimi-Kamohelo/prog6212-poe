@@ -22,7 +22,6 @@ C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\scopedcss\bundle\RaceDay.Mvc.styles.css
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\scopedcss\projectbundle\RaceDay.Mvc.bundle.scp.css
-C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\compressed\oqcoq3xzl1-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\compressed\g439x8b8p5-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\compressed\j7oburqbyd-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\compressed\st76figcm6-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -98,3 +97,4 @@ C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\RaceDay.Mvc.genruntimeconfig.cache
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\ref\RaceDay.Mvc.dll
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\RaceDay..FA4311BE.Up2Date
+C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\obj\Debug\net10.0\compressed\oqcoq3xzl1-{0}-523id7y71e-523id7y71e.gz
