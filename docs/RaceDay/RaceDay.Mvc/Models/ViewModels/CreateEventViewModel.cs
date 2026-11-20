@@ -1,4 +1,5 @@
 ﻿using RaceDay.Mvc.Models.Api;
+using RaceDay.Mvc.Models.API;
 using System.ComponentModel.DataAnnotations;
 
 namespace RaceDay.Mvc.ViewModels;
@@ -15,7 +16,7 @@ public class CreateEventViewModel
 
     [Required]
     [DataType(DataType.Date)]
-    public DateTime EventDate { get; set; }
+    public DateTime EventDate { get; set; } = DateTime.Today;
 
     [Required]
     [StringLength(150)]

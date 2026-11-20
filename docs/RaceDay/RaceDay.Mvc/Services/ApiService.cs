@@ -135,4 +135,12 @@ public class ApiService
 
         return await client.PutAsync(endpoint, null);
     }
+
+    public async Task<HttpResponseMessage> DeleteResponseAsync(
+    string endpoint)
+    {
+        var client = CreateClient();
+
+        return await client.DeleteAsync(endpoint);
+    }
 }

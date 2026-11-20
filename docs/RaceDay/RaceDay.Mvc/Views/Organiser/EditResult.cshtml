@@ -1,0 +1,78 @@
+﻿@model RaceDay.Mvc.ViewModels.CreateResultViewModel
+
+@{
+    ViewData["Title"] = "Edit Result";
+}
+
+<div class="container mt-4">
+
+    <h1>Edit Result</h1>
+
+    <div class="card p-3 mb-3">
+        <p><strong>Event:</strong> @Model.EventName</p>
+        <p><strong>Participant:</strong> @Model.ParticipantName</p>
+    </div>
+
+    <form asp-action="EditResult" method="post">
+
+        @Html.AntiForgeryToken()
+
+        <input type="hidden"
+               name="resultId"
+               value="@ViewBag.ResultId" />
+
+        <input asp-for="EnrolmentId" type="hidden" />
+        <input asp-for="EventId" type="hidden" />
+        <input asp-for="ParticipantName" type="hidden" />
+        <input asp-for="EventName" type="hidden" />
+
+        <div asp-validation-summary="All"
+             class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="FinishTime"
+                   class="form-label">
+                Finish Time
+            </label>
+
+            <input asp-for="FinishTime"
+                   type="time"
+                   step="1"
+                   class="form-control" />
+
+            <span asp-validation-for="FinishTime"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="FinishPosition"
+                   class="form-label">
+                Finish Position
+            </label>
+
+            <input asp-for="FinishPosition"
+                   type="number"
+                   min="1"
+                   class="form-control" />
+
+            <span asp-validation-for="FinishPosition"
+                  class="text-danger"></span>
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Update Result
+        </button>
+
+        <a asp-action="ManageEvent"
+           asp-route-id="@Model.EventId"
+           class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

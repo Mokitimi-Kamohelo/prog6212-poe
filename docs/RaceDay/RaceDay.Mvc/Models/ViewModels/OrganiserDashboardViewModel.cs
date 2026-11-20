@@ -1,4 +1,4 @@
-﻿using RaceDay.Mvc.Models.Api;
+﻿using RaceDay.Mvc.Models.API;
 
 namespace RaceDay.Mvc.ViewModels;
 
@@ -9,5 +9,5 @@ public class OrganiserDashboardViewModel
     public int TotalParticipants { get; set; }
     public int CompletedResults { get; set; }
 
-    public List<EventApiModel> Events { get; set; } = new();
+    public List<OrganiserEventApiModel> Events { get; set; } = new();
 }

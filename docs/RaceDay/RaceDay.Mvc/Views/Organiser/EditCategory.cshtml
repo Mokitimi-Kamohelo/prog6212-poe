@@ -1,0 +1,67 @@
+﻿@model RaceDay.Mvc.ViewModels.EditCategoryViewModel
+
+@{
+    ViewData["Title"] = "Edit Category";
+}
+
+<div class="container mt-4">
+
+    <h1>Edit Category</h1>
+
+    <form asp-action="EditCategory" method="post">
+
+        @Html.AntiForgeryToken()
+
+        <input asp-for="CategoryId" type="hidden" />
+        <input asp-for="EventId" type="hidden" />
+
+        <div asp-validation-summary="All"
+             class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="CategoryName"
+                   class="form-label"></label>
+
+            <input asp-for="CategoryName"
+                   class="form-control" />
+
+            <span asp-validation-for="CategoryName"
+                  class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CategoryType"
+                   class="form-label"></label>
+
+            <select asp-for="CategoryType"
+                    class="form-select">
+                <option value="Age">Age</option>
+                <option value="Distance">Distance</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CategoryValue"
+                   class="form-label"></label>
+
+            <input asp-for="CategoryValue"
+                   class="form-control" />
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Update Category
+        </button>
+
+        <a asp-action="ManageEvent"
+           asp-route-id="@Model.EventId"
+           class="btn btn-secondary">
+            Cancel
+        </a>
+
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

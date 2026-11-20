@@ -1,0 +1,185 @@
+﻿@model RaceDay.Mvc.ViewModels.ManageEventViewModel
+
+@{
+    ViewData["Title"] = "Manage Event";
+}
+
+<div class="container mt-4">
+
+    <a asp-action="MyEvents" class="btn btn-outline-secondary mb-3">
+        ← Back to My Events
+    </a>
+
+    <h1>@Model.Event.EventName</h1>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
+
+    <div class="card p-3 mb-4">
+        <h3>Event Information</h3>
+
+        <p><strong>Description:</strong> @Model.Event.Description</p>
+        <p><strong>Date:</strong> @Model.Event.EventDate</p>
+        <p><strong>Location:</strong> @Model.Event.Location</p>
+        <p><strong>Type:</strong> @Model.Event.EventType</p>
+        <p><strong>Distance:</strong> @Model.Event.Distance km</p>
+    </div>
+
+    <!-- CATEGORIES -->
+    <div class="card p-3 mb-4">
+
+        <div class="d-flex justify-content-between">
+            <h3>Categories</h3>
+
+            <a asp-action="CreateCategory"
+               asp-route-eventId="@Model.Event.EventId"
+               class="btn btn-primary">
+                + Add Category
+            </a>
+        </div>
+
+        @if (!Model.Event.Categories.Any())
+        {
+            <p>No categories have been created.</p>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Value</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var category in Model.Event.Categories)
+                        {
+                            <tr>
+                                <td>@category.CategoryName</td>
+                                <td>@category.CategoryType</td>
+                                <td>@category.CategoryValue</td>
+                                    <td>
+                                        <a asp-action="EditCategory"
+                                           asp-route-id="@category.CategoryId"
+                                           asp-route-eventId="@Model.Event.EventId"
+                                           class="btn btn-warning btn-sm">
+                                            Edit
+                                        </a>
+
+                                        <form asp-action="DeleteCategory"
+                                              method="post"
+                                              class="d-inline">
+
+                                            @Html.AntiForgeryToken()
+
+                                            <input type="hidden"
+                                                   name="categoryId"
+                                                   value="@category.CategoryId" />
+
+                                            <input type="hidden"
+                                                   name="eventId"
+                                                   value="@Model.Event.EventId" />
+
+                                            <button type="submit"
+                                                    class="btn btn-danger btn-sm"
+                                                    onclick="return confirm('Delete this category?')">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+
+    <!-- PARTICIPANTS -->
+    <div class="card p-3 mb-4">
+
+        <h3>Participants</h3>
+
+        <p>
+            Total enrolments:
+            <strong>@Model.Participants.Count</strong>
+        </p>
+
+        @if (!Model.Participants.Any())
+        {
+            <p>No participants have registered yet.</p>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Participant</th>
+                            <th>Category</th>
+                            <th>Registration Date</th>
+                            <th>Status</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var participant in Model.Participants)
+                        {
+                            <tr>
+                                <td>@participant.ParticipantName</td>
+                                <td>@participant.CategoryName</td>
+                                <td>@participant.EnrolmentDate</td>
+                                <td>@participant.Status</td>
+                                <td>
+                                    @if (participant.Status == "Cancelled")
+                                    {
+                                        <span class="text-muted">
+                                            Cancelled
+                                        </span>
+                                    }
+                                    else if (participant.Status == "Completed")
+                                    {
+                                        <a asp-action="EditResult"
+                                           asp-route-enrolmentId="@participant.EnrolmentId"
+                                           asp-route-eventId="@Model.Event.EventId"
+                                           class="btn btn-sm btn-outline-primary">
+                                            Edit Result
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="RecordResult"
+                                           asp-route-enrolmentId="@participant.EnrolmentId"
+                                           asp-route-eventId="@Model.Event.EventId"
+                                           asp-route-participantName="@participant.ParticipantName"
+                                           asp-route-eventName="@Model.Event.EventName"
+                                           class="btn btn-sm btn-primary">
+                                            Record Result
+                                        </a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+
+</div>

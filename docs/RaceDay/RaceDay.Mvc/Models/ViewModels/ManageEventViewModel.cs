@@ -1,12 +1,10 @@
-﻿using RaceDay.Mvc.Models.Api;
+﻿using RaceDay.Mvc.Models.API;
 
 namespace RaceDay.Mvc.ViewModels;
 
 public class ManageEventViewModel
 {
-    public EventApiModel Event { get; set; } = new();
+    public OrganiserEventDetailsApiModel Event { get; set; } = new();
 
-    public List<CategoryApiModel> Categories { get; set; } = new();
-
-    public List<EnrolmentApiModel> Participants { get; set; } = new();
+    public List<OrganiserParticipantApiModel> Participants { get; set; } = new();
 }
