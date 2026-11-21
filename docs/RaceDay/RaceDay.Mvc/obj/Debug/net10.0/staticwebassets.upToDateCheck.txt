@@ -61,6 +61,7 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\wwwroot\css\site.css
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\wwwroot\favicon.ico
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\wwwroot\js\site.js
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -122,4 +123,3 @@ C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\wwwroot\lib\jquery\dist\jquery.slim.min.js
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\wwwroot\lib\jquery\dist\jquery.slim.min.map
 C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\wwwroot\lib\jquery\LICENSE.txt
-C:\Users\shots\Desktop\CLUTTER\MSA\PROG6212POE\prog6212-poe\docs\RaceDay\RaceDay.Mvc\wwwroot\css\site.css

@@ -50,17 +50,17 @@ public class ParticipantController : Controller
         try
         {
             var results =
-                await _apiService.GetAsync<List<ResultsApiModel>>(
+                await _apiService.GetAsync<List<ResultApiModel>>(
                     "api/Results/my");
 
-            return View(results ?? new List<ResultsApiModel>());
+            return View(results ?? new List<ResultApiModel>());
         }
         catch
         {
             TempData["Error"] =
                 "Unable to load your results.";
 
-            return View(new List<ResultsApiModel>());
+            return View(new List<ResultApiModel>());
         }
     }
 

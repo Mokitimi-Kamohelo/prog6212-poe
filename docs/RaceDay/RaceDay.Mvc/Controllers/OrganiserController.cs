@@ -406,7 +406,7 @@ public class OrganiserController : Controller
             return RedirectToAction("ManageEvent", new { id });
         }
 
-        var response = await _apiService.PutFileResponseAsync(
+        var response = await _api.PutFileResponseAsync(
             $"api/Events/{id}/banner",
             banner);
 
