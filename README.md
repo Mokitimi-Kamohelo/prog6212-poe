@@ -7,7 +7,7 @@ A Participant uses RaceDay to browse available events, view event categories, en
 <img width="1901" height="571" alt="image" src="https://github.com/user-attachments/assets/ad30a201-2f29-4e51-8a12-f8c01d6d2eea" />
 
 
-PART 2 
+## PART 2 
 
 CHANGELOG:
 Entity Framework Core: Integrated Entity Framework Core with SQL Server and scaffolded the existing RaceDay database into the API project.
@@ -46,6 +46,172 @@ Get event from category id: <img width="1436" height="932" alt="image" src="http
 Enrolement:
 Enrol a participant to an event from category and event id's: <img width="1434" height="779" alt="image" src="https://github.com/user-attachments/assets/d5ed069e-87ae-4eb9-988c-bb423214dd7b" />
 
+## PART 3
+
+Part 3 extends the existing RaceDay Web API by introducing an ASP.NET Core MVC frontend, role-based user experiences, image storage integration, and containerisation using Docker.
+
+1. Project Overview
+
+RaceDay provides two main user roles:
+
+Participant
+
+Participants can:
+Register and log in.
+Browse available race events.
+View event information and available categories.
+Enrol in events.
+View their enrolments.
+Cancel eligible enrolments.
+View published race results.
+Manage their profile and profile picture.
+
+Homepage
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/d0b5c8ad-39fa-43f2-a850-88a121bf7992" />
+
+Events page
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8305bd82-3051-44bc-b8fc-0a13e416cd15" />
+
+Organiser
+
+Organisers can:
+Log in using an Organiser account.
+Access an organiser dashboard.
+Create and manage their own events.
+Create and manage event categories.
+View participants enrolled in their events.
+Record and update race results.
+Upload event banner images.
+
+
+2. Features
+
+User authentication - Registration and login
+JWT authentication - API access secured using JSON Web Tokens
+Session management - MVC stores the authenticated user's session and JWT
+Role-based access - Participant and Organiser functionality
+Event management - Create, view and manage events
+Category management - Define event categories
+Enrolment management - Register and manage event participation
+Results management - Record and view race results
+Profile management - Manage participant profile information
+Image uploads - Event banners and profile pictures
+Local blob storage - Azure Blob Storage development using Azurite
+Responsive frontend - Bootstrap-based MVC interface
+API documentation - Swagger/OpenAPI
+Containerisation - Docker and Docker Compose
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/33fba4d7-5136-4896-ac9a-9b9b747ad4dd" />
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6ccb2ac3-b4d8-4820-9241-8d91d9917533" />
+
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/32b5e869-33af-449f-b2de-f9826997d903" />
+
+<img width="1919" height="706" alt="image" src="https://github.com/user-attachments/assets/a10d1e09-8e94-46ec-a438-7a350218ba28" />
+
+Logged in
+<img width="1919" height="695" alt="image" src="https://github.com/user-attachments/assets/ef152217-fb6f-4fdd-9d1c-146c1ed49c4d" />
+
+
+
+
+3. Technology Stack
+
+C# - Application programming language
+ASP.NET Core Web API - Backend REST API
+ASP.NET Core MVC - Frontend web application
+.NET 10 - Application framework
+Entity Framework Core - Database access in the API
+Microsoft SQL Server - Relational database
+JWT - API authentication
+ASP.NET Core Session - MVC authentication state
+Bootstrap - Responsive user interface
+HTML, CSS and JavaScript - Frontend development
+Azure Blob Storage SDK - Blob storage integration
+Azurite - Local Azure Storage emulator
+Docker - Application containerisation
+API documentation and testing - GitHub
+
+
+4. System Architecture
+
+MVC frontend
+Displays the user interface.
+Manages the user's session.
+Sends HTTP requests to the API.
+Passes the JWT token when calling protected endpoints.
+Displays API responses.
+
+Web API
+Processes business logic.
+Validates requests.
+Enforces authentication and role-based authorisation.
+Communicates with SQL Server.
+Handles image storage operations.
+
+SQL Server
+Stores users, roles, events, categories, enrolments and results.
+
+Azurite
+Provides local Azure Storage-compatible blob functionality.
+Simulates Azure Blob Storage during development.
+Stores uploaded event banners and profile pictures in local development storage.
+
+
+5. Running the Project Locally
+
+Open the solution
+docs/RaceDay/RaceDay.slnx
+
+Configure the API
+Ensure the API has a valid SQL Server connection string and the required JWT configuration.
+
+Configure the MVC application
+Ensure the MVC application's API base URL points to the running API.
+The configuration key is: RaceDayApi:BaseUrl
+
+Start the API
+From the repository root: dotnet run --project .\docs\RaceDay\RaceDay.Api\RaceDay.Api.csproj
+
+Start the MVC application
+Open a second terminal:
+dotnet run --project .\docs\RaceDay\RaceDay.Mvc\RaceDay.Mvc.csproj
+Open the MVC URL displayed in the terminal.
+
+
+6. Running with Docker
+
+Step 1: Start Docker Desktop
+Ensure Docker Desktop is running.
+
+Step 2: Navigate to the repository root
+cd <YOUR-REPOSITORY-FOLDER>
+
+Step 3: Check the Docker Compose configuration
+Ensure the repository contains: docker-compose.yml
+Also confirm that the Dockerfiles referenced by the Compose file exist.
+
+Step 4: Build and start the containers
+docker compose up --build
+To run the containers in the background: docker compose up --build -d
+
+Step 5: Check running containers
+docker compose ps
+
+Step 6: View container logs
+View all service logs: docker compose logs
+View logs for a specific service: docker compose logs -f raceday-api
+Replace raceday-api with the actual service name in docker-compose.yml.
+
+Step 7: Access the application
+Use the host ports configured in docker-compose.yml.
+For example, if the MVC service maps host port 8080 to its container port: http://localhost:1234
+Use the actual port mapping in your Compose configuration.
+
+Step 8: Stop the containers
+docker compose down
+To stop the containers and remove their associated Compose-managed volumes: docker compose down -v
 
 
 
