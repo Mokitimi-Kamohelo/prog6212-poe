@@ -1,14 +1,9 @@
 ﻿@using RaceDay.Mvc.Services
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8" />
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>@ViewData["Title"] - RaceDay</title>
 
@@ -18,32 +13,29 @@
     <link rel="stylesheet"
           href="~/css/site.css"
           asp-append-version="true" />
-
 </head>
 
 <body>
 
     <header>
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
+        <nav class="navbar navbar-expand-lg raceday-navbar navbar-dark">
             <div class="container">
 
                 <a class="navbar-brand fw-bold"
                    asp-controller="Home"
                    asp-action="Index">
-
                     <span class="text-warning">RACE</span>DAY
-
                 </a>
 
                 <button class="navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#mainNavbar">
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
 
                     <span class="navbar-toggler-icon"></span>
-
                 </button>
 
                 <div class="collapse navbar-collapse"
@@ -51,117 +43,50 @@
 
                     <ul class="navbar-nav me-auto">
 
-    <li class="nav-item">
-
-        <a class="nav-link"
-           asp-controller="Events"
-           asp-action="Index">
-
-            Events
-
-        </a>
-
-    </li>
-
                         <li class="nav-item">
-
                             <a class="nav-link"
-                               asp-controller="Participant"
-                               asp-action="MyResults">
-
-                                My Results
-
+                               asp-controller="Home"
+                               asp-action="Index">
+                                Home
                             </a>
-
                         </li>
 
-    @if (Context.Session.GetString(SessionKeys.Role) == "Participant")
-    {
-        <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-controller="Events"
+                               asp-action="Index">
+                                Events
+                            </a>
+                        </li>
 
-            <a class="nav-link"
-               asp-controller="Participant"
-               asp-action="MyEnrolments">
-
-                My Enrolments
-
-            </a>
-
-        </li>
-    }
-
-</ul>
-
-                    <ul class="navbar-nav">
-
-                        @if (Context.Session.GetString(SessionKeys.JwtToken) != null)
-                        {
-                            <li class="nav-item d-flex align-items-center me-lg-3">
-
-                                <span class="text-white">
-
-                                    Hello,
-                                    @Context.Session.GetString(SessionKeys.FirstName)
-
-                                </span>
-
-                            </li>
-
-                            <li class="nav-item d-flex align-items-center me-lg-3">
-
-                                <span class="badge bg-warning text-dark">
-
-                                    @Context.Session.GetString(SessionKeys.Role)
-
-                                </span>
-
-                            </li>
-
-                            <li class="nav-item">
-
-                                <form asp-controller="Auth"
-                                      asp-action="Logout"
-                                      method="post">
-
-                                    <button type="submit"
-                                            class="btn btn-outline-light btn-sm">
-
-                                        Logout
-
-                                    </button>
-
-                                </form>
-
-                            </li>
-                        }
-                        else
+                        @if (Context.Session.GetString(SessionKeys.Role) == "Participant")
                         {
                             <li class="nav-item">
-
                                 <a class="nav-link"
-                                   asp-controller="Auth"
-                                   asp-action="Login">
-
-                                    Login
-
+                                   asp-controller="Participant"
+                                   asp-action="MyEnrolments">
+                                    My Enrolments
                                 </a>
-
                             </li>
 
                             <li class="nav-item">
-
-                                <a class="btn btn-warning btn-sm mt-1"
-                                   asp-controller="Auth"
-                                   asp-action="Register">
-
-                                    Register
-
+                                <a class="nav-link"
+                                   asp-controller="Participant"
+                                   asp-action="MyResults">
+                                    My Results
                                 </a>
+                            </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Participant"
+                                   asp-action="Dashboard">
+                                    Dashboard
+                                </a>
                             </li>
                         }
 
-                        @if (Context.Session.GetString("Role") == "Organiser")
+                        @if (Context.Session.GetString(SessionKeys.Role) == "Organiser")
                         {
                             <li class="nav-item">
                                 <a class="nav-link"
@@ -182,25 +107,76 @@
 
                     </ul>
 
+                    <ul class="navbar-nav align-items-lg-center">
+
+                        @if (Context.Session.GetString(SessionKeys.JwtToken) != null)
+                        {
+                            <li class="nav-item d-flex align-items-center me-lg-3">
+                                <span class="navbar-text text-white">
+                                    Hello,
+                                    @Context.Session.GetString(SessionKeys.FirstName)
+                                </span>
+                            </li>
+
+                            <li class="nav-item d-flex align-items-center me-lg-3">
+                                <span class="badge bg-warning text-dark">
+                                    @Context.Session.GetString(SessionKeys.Role)
+                                </span>
+                            </li>
+
+                            <li class="nav-item">
+                                <form asp-controller="Auth"
+                                      asp-action="Logout"
+                                      method="post">
+
+                                    <button type="submit"
+                                            class="btn btn-outline-light btn-sm">
+                                        Logout
+                                    </button>
+
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Auth"
+                                   asp-action="Login">
+                                    Login
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="btn btn-warning btn-sm mt-1"
+                                   asp-controller="Auth"
+                                   asp-action="Register">
+                                    Register
+                                </a>
+                            </li>
+                        }
+
+                    </ul>
+
                 </div>
 
             </div>
-
         </nav>
-
     </header>
 
     <main class="container py-4">
 
         @if (TempData["Success"] != null)
         {
-            <div class="alert alert-success alert-dismissible fade show">
+            <div class="alert alert-success alert-dismissible fade show"
+                 role="alert">
 
                 @TempData["Success"]
 
                 <button type="button"
                         class="btn-close"
-                        data-bs-dismiss="alert">
+                        data-bs-dismiss="alert"
+                        aria-label="Close">
                 </button>
 
             </div>
@@ -208,13 +184,15 @@
 
         @if (TempData["Error"] != null)
         {
-            <div class="alert alert-danger alert-dismissible fade show">
+            <div class="alert alert-danger alert-dismissible fade show"
+                 role="alert">
 
                 @TempData["Error"]
 
                 <button type="button"
                         class="btn-close"
-                        data-bs-dismiss="alert">
+                        data-bs-dismiss="alert"
+                        aria-label="Close">
                 </button>
 
             </div>
@@ -224,26 +202,31 @@
 
     </main>
 
-    <footer class="border-top mt-5 py-3">
+    <footer class="raceday-footer">
+        <div class="container text-center">
 
-        <div class="container text-center text-muted">
+            <p class="mb-1">
+                <strong>RaceDay</strong>
+            </p>
 
-            &copy; @DateTime.Now.Year RaceDay
+            <p class="mb-1">
+                Your race. Your journey.
+            </p>
 
-            <span class="mx-2">|</span>
-
-            Your race. Your journey.
+            <small>
+                &copy; @DateTime.Now.Year RaceDay
+            </small>
 
         </div>
-
     </footer>
 
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js"
+            asp-append-version="true">
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>
-
 </html>

@@ -1,5 +1,4 @@
 ﻿@model RaceDay.Mvc.Models.ViewModels.ApiStatusViewModel
-
 @using RaceDay.Mvc.Services
 
 @{
@@ -12,148 +11,273 @@
         SessionKeys.Role);
 }
 
-<div class="p-4 p-md-5 mb-4 bg-dark text-white rounded-3">
+<section class="card border-0 mb-5 raceday-hero">
 
-    <div class="container-fluid py-3">
+    <div class="card-body p-4 p-md-5">
 
-        <h1 class="display-4 fw-bold">
+        <div class="row align-items-center">
 
-            RaceDay
+            <div class="col-lg-8">
 
-        </h1>
+                <span class="badge bg-warning text-dark mb-3">
+                    YOUR NEXT CHALLENGE STARTS HERE
+                </span>
 
-        <p class="lead">
+                <h1 class="display-4 fw-bold text-white">
+                    RaceDay
+                </h1>
 
-            Every race starts with a single step.
+                <p class="lead text-white">
+                    Every race starts with a single step.
+                    Discover events, challenge yourself,
+                    and track your achievements.
+                </p>
 
-            Discover events, challenge yourself,
-            and track your achievements.
+                @if (!loggedIn)
+                {
+                    <div class="d-flex flex-wrap gap-2 mt-4">
 
+                        <a asp-controller="Auth"
+                           asp-action="Register"
+                           class="btn btn-warning btn-lg">
+                            Get Started
+                        </a>
+
+                        <a asp-controller="Auth"
+                           asp-action="Login"
+                           class="btn btn-outline-light btn-lg">
+                            Login
+                        </a>
+
+                        <a asp-controller="Events"
+                           asp-action="Index"
+                           class="btn btn-light btn-lg">
+                            Browse Events
+                        </a>
+
+                    </div>
+                }
+                else
+                {
+                    <h4 class="mt-4 text-white">
+                        Welcome,
+                        @Context.Session.GetString(SessionKeys.FirstName)!
+                    </h4>
+
+                    <p class="text-white">
+                        You are logged in as
+                        <strong>@role</strong>.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+
+                        <a asp-controller="Events"
+                           asp-action="Index"
+                           class="btn btn-warning btn-lg">
+                            Browse Events
+                        </a>
+
+                        @if (role == "Participant")
+                        {
+                            <a asp-controller="Participant"
+                               asp-action="Dashboard"
+                               class="btn btn-outline-light btn-lg">
+                                My Dashboard
+                            </a>
+                        }
+
+                        @if (role == "Organiser")
+                        {
+                            <a asp-controller="Organiser"
+                               asp-action="Dashboard"
+                               class="btn btn-outline-light btn-lg">
+                                Organiser Dashboard
+                            </a>
+                        }
+
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-lg-4 mt-4 mt-lg-0">
+
+                <div class="hero-feature-box">
+
+                    <h3 class="text-white">
+                        Your Next Race
+                    </h3>
+
+                    <p class="text-white">
+                        Running, walking or cycling.
+                        Find an event, register and
+                        start your journey.
+                    </p>
+
+                    <a asp-controller="Events"
+                       asp-action="Index"
+                       class="btn btn-light">
+                        Explore Events &rarr;
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="mb-5">
+
+    <div class="page-header text-center">
+
+        <h2>Everything You Need</h2>
+
+        <p>
+            Discover, participate and track your progress.
         </p>
 
-        @if (!loggedIn)
-        {
-            <a asp-controller="Auth"
-               asp-action="Register"
-               class="btn btn-warning btn-lg me-2">
+    </div>
 
-                Get Started
+    <div class="row g-4">
 
-            </a>
+        <div class="col-md-6 col-lg-4">
 
-            <a asp-controller="Auth"
-               asp-action="Login"
-               class="btn btn-outline-light btn-lg">
+            <div class="card dashboard-card h-100">
 
-                Login
+                <div class="card-body">
 
-            </a>
-        }
-        else
-        {
-            <h4 class="mt-3">
+                    <h4 class="card-title">
+                        Discover Events
+                    </h4>
 
-                Welcome,
-                @Context.Session.GetString(SessionKeys.FirstName)!
+                    <p class="card-text text-muted">
+                        Find upcoming running, walking and
+                        cycling events and discover your
+                        next challenge.
+                    </p>
 
+                    <a asp-controller="Events"
+                       asp-action="Index"
+                       class="btn btn-outline-primary mt-2">
+                        Browse Events
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+
+            <div class="card dashboard-card h-100">
+
+                <div class="card-body">
+
+                    <h4 class="card-title">
+                        Manage Participation
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Keep track of your enrolments
+                        and event participation.
+                    </p>
+
+                    @if (role == "Participant")
+                    {
+                        <a asp-controller="Participant"
+                           asp-action="MyEnrolments"
+                           class="btn btn-outline-primary mt-2">
+                            My Enrolments
+                        </a>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+
+            <div class="card dashboard-card h-100">
+
+                <div class="card-body">
+
+                    <h4 class="card-title">
+                        Track Your Progress
+                    </h4>
+
+                    <p class="card-text text-muted">
+                        Keep track of your achievements,
+                        race history and published results.
+                    </p>
+
+                    @if (role == "Participant")
+                    {
+                        <a asp-controller="Participant"
+                           asp-action="MyResults"
+                           class="btn btn-outline-primary mt-2">
+                            My Results
+                        </a>
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="mb-4">
+
+    <div class="card">
+
+        <div class="card-body p-4">
+
+            <h4 class="fw-bold mb-3">
+                System Status
             </h4>
 
-            <p>
+            @if (Model.ApiConnected)
+            {
+                <div class="alert alert-success mb-0">
 
-                You are logged in as
-                <strong>@role</strong>.
+                    <strong>
+                        API Online
+                    </strong>
 
-            </p>
-        }
+                    <p class="mb-0 mt-1">
+                        The RaceDay MVC application is communicating
+                        with the backend API.
+                    </p>
 
-    </div>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning mb-0">
 
-</div>
+                    <strong>
+                        API Connection Issue
+                    </strong>
 
-<div class="row g-4">
+                    <p class="mb-0 mt-1">
+                        @Model.Message
+                    </p>
 
-    <div class="col-md-6">
-
-        <div class="card h-100 shadow-sm">
-
-            <div class="card-body">
-
-                <h4 class="card-title">
-
-                    Discover Events
-
-                </h4>
-
-                <p class="card-text">
-
-                    Find upcoming running, walking and
-                    cycling events.
-
-                </p>
-
-            </div>
+                </div>
+            }
 
         </div>
 
     </div>
 
-    <div class="col-md-6">
-
-        <div class="card h-100 shadow-sm">
-
-            <div class="card-body">
-
-                <h4 class="card-title">
-
-                    Track Your Progress
-
-                </h4>
-
-                <p class="card-text">
-
-                    Keep track of your enrolments,
-                    achievements and results.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-<hr class="my-4" />
-
-<h4>System Status</h4>
-
-@if (Model.ApiConnected)
-{
-    <div class="alert alert-success">
-
-        <strong>API Online</strong>
-
-        <p class="mb-0">
-
-            The RaceDay MVC application is communicating
-            with the backend API.
-
-        </p>
-
-    </div>
-}
-else
-{
-    <div class="alert alert-warning">
-
-        <strong>API Connection Issue</strong>
-
-        <p class="mb-0">
-
-            @Model.Message
-
-        </p>
-
-    </div>
-}
+</section>

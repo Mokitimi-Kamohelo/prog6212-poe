@@ -6,19 +6,28 @@
 
 @if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
 {
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" role="alert">
         @Model.ErrorMessage
     </div>
 }
 
-<div class="mb-3">
+<div class="page-header d-flex flex-wrap
+    justify-content-between align-items-center gap-3">
+
+    <div>
+        <h1 class="mb-1">
+            Event Details
+        </h1>
+
+        <p>
+            Explore the event and view its available categories.
+        </p>
+    </div>
 
     <a asp-controller="Events"
        asp-action="Index"
        class="btn btn-outline-secondary">
-
         &larr; Back to Events
-
     </a>
 
 </div>
@@ -28,21 +37,15 @@
     <div class="card-body p-4 p-md-5">
 
         <span class="badge bg-warning text-dark mb-3">
-
             @(Model.Event.EventType ?? "Event")
-
         </span>
 
         <h1 class="display-5 fw-bold">
-
             @Model.Event.EventName
-
         </h1>
 
         <p class="lead text-muted">
-
             @Model.Event.Location
-
         </p>
 
         <hr />
@@ -57,10 +60,8 @@
                         Event Date
                     </small>
 
-                    <h5 class="mt-1">
-
+                    <h5 class="mt-1 mb-0">
                         @Model.Event.EventDate.ToString("dddd, dd MMMM yyyy")
-
                     </h5>
 
                 </div>
@@ -75,10 +76,8 @@
                         Distance
                     </small>
 
-                    <h5 class="mt-1">
-
+                    <h5 class="mt-1 mb-0">
                         @Model.Event.Distance km
-
                     </h5>
 
                 </div>
@@ -93,10 +92,8 @@
                         Organiser
                     </small>
 
-                    <h5 class="mt-1">
-
+                    <h5 class="mt-1 mb-0">
                         @(Model.Event.Organiser ?? "RaceDay Organiser")
-
                     </h5>
 
                 </div>
@@ -107,12 +104,13 @@
 
         <hr />
 
-        <h4>About this event</h4>
+        <h4 class="fw-bold">
+            About This Event
+        </h4>
 
-        <p>
-
-            @(Model.Event.Description ?? "No event description has been provided.")
-
+        <p class="mb-0">
+            @(Model.Event.Description ??
+                "No event description has been provided.")
         </p>
 
     </div>
@@ -120,6 +118,8 @@
 </div>
 
 <div class="row g-4">
+
+    <!-- AVAILABLE CATEGORIES -->
 
     <div class="col-lg-7">
 
@@ -135,25 +135,21 @@
                      Model.Event.Categories.Count == 0)
                 {
                     <div class="alert alert-info">
-
                         No categories have been added to this event yet.
-
                     </div>
                 }
                 else
                 {
                     <div class="table-responsive">
 
-                        <table class="table table-striped">
+                        <table class="table table-striped table-hover">
 
                             <thead>
-
                                 <tr>
                                     <th>Category</th>
                                     <th>Type</th>
                                     <th>Value</th>
                                 </tr>
-
                             </thead>
 
                             <tbody>
@@ -190,6 +186,8 @@
 
     </div>
 
+    <!-- ENROLMENT -->
+
     <div class="col-lg-5">
 
         <div class="card shadow-sm h-100">
@@ -197,66 +195,58 @@
             <div class="card-body p-4">
 
                 <h3 class="fw-bold mb-3">
-                    Enrol in this Event
+                    Enrol in This Event
                 </h3>
 
                 @if (Model.AlreadyEnrolled)
                 {
                     <div class="alert alert-success">
 
-                        You are already enrolled in this event.
+                        <strong>Already Enrolled</strong>
+
+                        <p class="mb-0 mt-1">
+                            You are already enrolled in this event.
+                        </p>
 
                     </div>
 
                     <a asp-controller="Participant"
                        asp-action="MyEnrolments"
-                       class="btn btn-dark w-100">
-
+                       class="btn btn-primary w-100">
                         View My Enrolments
-
                     </a>
                 }
                 else if (!Model.IsLoggedIn)
                 {
                     <p>
-
                         Log in to your Participant account
                         to enrol in this event.
-
                     </p>
 
                     <a asp-controller="Auth"
                        asp-action="Login"
                        asp-route-returnUrl="@Url.Action("Details", "Events", new { id = Model.Event.EventId })"
-                       class="btn btn-dark w-100">
-
+                       class="btn btn-primary w-100">
                         Login to Enrol
-
                     </a>
 
                     <a asp-controller="Auth"
                        asp-action="Register"
-                       class="btn btn-outline-dark w-100 mt-2">
-
+                       class="btn btn-outline-primary w-100 mt-2">
                         Create Participant Account
-
                     </a>
                 }
                 else if (!Model.IsParticipant)
                 {
                     <div class="alert alert-info">
-
                         Only Participant accounts can enrol in events.
-
                     </div>
                 }
                 else if (Model.Event.Categories == null ||
                          Model.Event.Categories.Count == 0)
                 {
                     <div class="alert alert-warning">
-
                         This event currently has no categories available.
-
                     </div>
                 }
                 else
@@ -272,9 +262,7 @@
                         <div class="mb-3">
 
                             <label class="form-label fw-semibold">
-
                                 Select Category
-
                             </label>
 
                             <select name="categoryId"
