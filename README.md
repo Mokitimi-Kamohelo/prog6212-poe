@@ -72,6 +72,11 @@ Homepage
 Login page
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/8305bd82-3051-44bc-b8fc-0a13e416cd15" />
 
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6ccb2ac3-b4d8-4820-9241-8d91d9917533" />
+
+Logged in
+<img width="1919" height="695" alt="image" src="https://github.com/user-attachments/assets/ef152217-fb6f-4fdd-9d1c-146c1ed49c4d" />
+
 Organiser
 
 Organisers can:
@@ -104,17 +109,9 @@ Containerisation - Docker and Docker Compose
 Events Page
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/33fba4d7-5136-4896-ac9a-9b9b747ad4dd" />
 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6ccb2ac3-b4d8-4820-9241-8d91d9917533" />
-
-
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/32b5e869-33af-449f-b2de-f9826997d903" />
 
 <img width="1919" height="706" alt="image" src="https://github.com/user-attachments/assets/a10d1e09-8e94-46ec-a438-7a350218ba28" />
-
-Logged in
-<img width="1919" height="695" alt="image" src="https://github.com/user-attachments/assets/ef152217-fb6f-4fdd-9d1c-146c1ed49c4d" />
-
-
 
 
 3. Technology Stack
